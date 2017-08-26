@@ -9,8 +9,8 @@
 /// Regular font family
 /// @type List
 
-// Define 2 variables font stack, the first one is the default, the other one is for custom fonts used 
-$text-font-stack-loaded: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+// Define 2 variables font stack, the first one is the default, the other one is for custom fonts used
+$text-font-stack-loaded: 'Poppins', sans-serif !default;
 $text-font-stack: 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
@@ -68,4 +68,3 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
- 

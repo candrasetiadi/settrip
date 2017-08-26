@@ -32,7 +32,7 @@ var svg_icon_config = {
       mode:{
         symbol:{
           dest: '.',
-          sprite: "sprite.icon.svg" 
+          sprite: "sprite.icon.svg"
         }
       }
     };
@@ -40,7 +40,7 @@ var svg_static_config = {
       mode:{
         symbol:{
           dest: '.',
-          sprite: "sprite.static.svg" 
+          sprite: "sprite.static.svg"
         }
       }
     };
@@ -174,7 +174,7 @@ gulp.task("build:clean", function(){
     .pipe(clean());
 });
 
-// Task for copy all files from folder 'app' 
+// Task for copy all files from folder 'app'
 // except 'images'(handled on build task), 'js'(handled on build task), 'css'(handled on build task), 'sass' (not needed in dist)
 gulp.task("build:copy", ['build:clean'], function(){
   var exclude = [
@@ -194,7 +194,7 @@ gulp.task("build:copy", ['build:clean'], function(){
 // This task will remove unused css after run build:css, build:scripts, build:copy
 gulp.task('build:purify', ['build:css','build:scripts', 'build:copy'], function(){
   var include = [
-    config.path.src + '/*.html', 
+    config.path.src + '/*.html',
     config.path.src + '/js/*.js'
   ],
   css = [config.path.dest + '/css/style.css'];
@@ -208,6 +208,7 @@ gulp.task('build:purify', ['build:css','build:scripts', 'build:copy'], function(
 
 gulp.task('watch', ['server'],function(){
   gulp.watch(config.path.src + '/*.html', ['html']);
+  gulp.watch(config.path.src + '/views/*.html', ['html']);
   gulp.watch(config.path.src + '/sass/**/*.scss', ['css']);
   gulp.watch(config.path.src + '/js/**/*.js', ['scripts']);
   gulp.watch(config.path.src + '/images/svg/icon/*.svg', ['svgicon']);
