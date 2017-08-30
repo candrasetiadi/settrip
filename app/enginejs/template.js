@@ -1,4 +1,3 @@
-
 function getQueryStrings() {
     var assoc  = {};
     var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
@@ -84,12 +83,6 @@ function showList()
       );
       $(ul).append(li);
     }
-    $(div).append($('<img>').attr("src","enginejs/img/wknd.png").css({
-      'display':'block',
-      'width':'25px',
-      'float':'left',
-      'margin-top':'5px'
-    }));
     $(div).append(ul);
     $("body").append(
       $(div)
@@ -97,7 +90,7 @@ function showList()
     hide = $(div).height();
     height = hide+20;
     $(div).before(
-      $('<span>').addClass('wknd-handle-'+keyView).html('Show').css({
+      $('<span>').addClass('template-handle-'+keyView).html('Show').css({
           backgroundColor: '#1b1a26',
           color: '#fff',
           padding:'2px 10px',
@@ -119,7 +112,7 @@ function showList()
     // $("#" + keyView).animate({
     //   bottom: '0px'
     // });
-    $(".wknd-handle-" + keyView).click(function(){
+    $(".template-handle-" + keyView).click(function(){
       showList();
     });
   }
@@ -129,20 +122,20 @@ function showList()
       $("#" + keyView).animate({
         bottom: -height
       });
-      $(".wknd-handle-" + keyView).animate({
+      $(".template-handle-" + keyView).animate({
         bottom: 0
       }, function(){
-        $(".wknd-handle-" + keyView).html('Show');
+        $(".template-handle-" + keyView).html('Show');
       });
     }
     else {
       $("#" + keyView).animate({
         bottom: '0px'
       });
-      $(".wknd-handle-" + keyView).animate({
+      $(".template-handle-" + keyView).animate({
         bottom: height
       },function(){
-          $(".wknd-handle-" + keyView).html('Hide');
+          $(".template-handle-" + keyView).html('Hide');
       });
     }
   }
@@ -150,7 +143,7 @@ function showList()
 
 $(document).ready(
   function(){
-      
+
     $(config.container).load(config.viewfolder + '/' + view + '.' + config.extension, function(){
       run();
         $('.loading').removeClass('active');

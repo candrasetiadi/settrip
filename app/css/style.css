@@ -1,3 +1,8 @@
+.styleguide .btn {
+  margin-bottom: 16px;
+  display: block;
+}
+
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -734,9 +739,48 @@ span {
   display: none !important;
 }
 
-button {
+.btn {
   background-color: transparent;
   border: 0px solid transparent;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 8px 54px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #a4a4a4;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.btn--medium {
+  padding: 16px 54px;
+  font-size: 15px;
+}
+
+.btn.btn--blue {
+  background-color: #5b8ef4;
+  border: solid 1px #4d7cda;
+  color: white;
+}
+
+.btn.btn--orange {
+  background-color: #ffb757;
+  border: solid 1px #f0a643;
+  color: white;
+}
+
+.btn.btn-add {
+  border: 1px #5b8ef4;
+  border-style: dashed;
+  background-color: white;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */
