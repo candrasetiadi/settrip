@@ -1,0 +1,998 @@
+.plan-destinasi-board{
+   background-color: #ffffff;
+   padding: 16px 0px;
+   box-shadow: inset 0 -1px 0 0 #dfe4e8;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 60px;
+   z-index: 3;
+   .plan-destinasi-board-box{
+     display: inline-block;
+     margin-right: 120px;
+     vertical-align: middle;
+     .label{
+       font-size: 12px;
+       font-weight: 700;
+       line-height: 1;
+       color: #5b8ef4;
+       margin-bottom: 8px;
+       text-transform: uppercase;
+     }
+     .value{
+       position: relative;
+       font-size: 24px;
+       line-height: 1;
+       color: #3d3d3d;
+       text-transform: capitalize;
+     }
+     @media(max-width: 768px){
+      margin-right: 30px;
+     }
+     @media(max-width: 650px){
+        margin-right: 7px;
+        .label{
+          display: none;
+        }
+        .value{
+          font-size: 16px;
+          &:after{
+            content: '\00B7';
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            margin-left: 8px;
+            font-size: 24px;
+            font-weight: bold;
+          }
+        }
+        &:last-child{
+          .value{
+            &:after{
+              content: none;
+            }
+          }
+        }
+      }
+      @media(max-width: 400px){
+        margin-right: 0;
+        margin-top: -3px;
+        .value{
+          font-size: 14px;
+          &:after{
+            margin-left: 0;
+          }
+        }
+        &:last-child{
+          margin-top: -1px;
+        }
+      }
+   }
+   .plan-destinasi-board-action{
+     position: absolute;
+     font-size: 15px;
+     font-weight: 700;
+     text-align: left;
+     color: #5b8ef4;
+     right: 20px;
+     top: 50%;
+     transform: translateY(-50%);
+     text-transform: uppercase;
+   }
+}
+
+.plan-destinasi{
+  padding-top: 110px;
+  @media (max-width: 800px){
+    padding-top: 75px;
+  }
+  & > h3 {
+    margin-bottom: 35px;
+    @media (max-width: 800px){
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  .row{
+    margin: 0px;
+    align-items: flex-start;
+    @media (max-width: 800px){
+      text-align: center;
+    }
+  }
+  .plan-destinasi-date{
+    width: 60px;
+    margin-right: 16px;
+    @media (max-width: 800px){
+      width: auto;
+      display: inline-block;
+      margin: auto;
+      margin-bottom: 24px;
+      .pd-date-block{
+        width: 60px;
+        display: inline-block;
+        margin-left: -3px;
+        border: 1px solid #DDDDDD;
+        border-left: 0px solid transparent ;
+        &:last-child{
+          border-bottom: 1px solid #DDDDDD;
+        }
+      }
+    }
+  }
+  .pd-date-block{
+    display: block;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: #efefef;
+    border-bottom: solid 1px #DDDDDD;
+    position: relative;
+    z-index: 1;
+    &:last-child{
+      border-bottom: 1px solid transparent;
+    }
+    &.active{
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.15), 0 0 0 1px rgba(63, 63, 68, 0.05);
+      z-index: 2;
+    }
+  }
+  .pd-date-days{
+    @include popins ;
+    font-size: 22px;
+    line-height: 1.09;
+    color: #3d3d3d;
+    margin-bottom: 6px;
+  }
+  .pd-date-month{
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: #3d3d3d;
+    text-transform: uppercase;
+  }
+  .plan-destinasi-main-body{
+    width: calc(65% - 16px);
+    margin-right: 16px;
+    @media (max-width: 800px){
+      width: 100%;
+      margin: 0px;
+      margin-bottom: 16px;
+    }
+  }
+  .plan-destinasi-mb-inner{
+    width: 100%;
+    display: block;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.15), 0 0 0 1px rgba(63, 63, 68, 0.05);
+  }
+  .pd-mb-head{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    counter-reset: section;
+  }
+  .pd-mb-step{
+    background-color: #f9f9fb;
+    border-right: solid 1px #e9e9eb;
+    border-bottom: solid 1px #e9e9eb;
+    flex-grow: 1;
+    padding: 10px;
+    cursor: default;
+    &:last-child{
+      border-right: 0px solid transparent;
+    }
+    &:before{
+      content:attr(step);
+      width: 32px;
+      height: 32px;
+      border: solid 2px #9e9e9e;
+      color: #9e9e9e;
+      border-radius: 100%;
+      display: block;
+      margin: auto;
+      font-size: 15px;
+      text-align: center;
+      line-height: 28px;
+      @include popins ;
+      margin-bottom: 10px;
+    }
+    p{
+      line-height: 0.93;
+      text-align: center;
+      color: #9e9e9e;
+      text-transform: uppercase;
+      margin: 0px;
+    }
+    &.active{
+      background-color: #ffffff;
+      border-bottom: 4px solid #5b8ef4;
+      p{
+         color: #5b8ef4;
+      }
+      &:before{
+        border: solid 4px #5b8ef4;
+        color: #5b8ef4;
+        line-height: 24px;
+      }
+    }
+    &.done{
+      background-color: #ffffff;
+      &:before{
+        font : normal normal normal 14px/1 FontAwesome ;
+        content: "\f00c";
+        line-height: 30px;
+      }
+    }
+  }
+  .pd-mb-body{
+    padding: 16px;
+    min-height: 240px;
+    .empty-state{
+      width: 100%;
+      min-height: 240px;
+      background-color: #f9f9fb;
+      position: relative;
+      text-align: center;
+      h5{
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -0.6px;
+        text-align: center;
+        color: #3d3d3d;
+        & + button {
+          margin-top: 25px;
+          margin-bottom: 24px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+      a{
+        display: block;
+        font-size: 15px;
+        line-height: 1;
+        color: #5b8ef4;
+        font-weight: 300;
+      }
+    }
+    .btn-add{
+      width: 100%;
+      margin-top: 24px;
+      p{
+        color: #3d3d3d;
+      }
+    }
+  }
+  .plan-destinasi-cart-price{
+    width: calc(35% - 76px) ;
+    .pd-cp-inner{
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.15), 0 0 0 1px rgba(63, 63, 68, 0.05);
+      margin-bottom: 16px;
+    }
+    @media (max-width: 800px){
+      width: 100%;
+    }
+    @media (max-width: 600px){
+      position: fixed;
+      left: 0;
+      bottom: 0 ;
+      right : 0 ;
+      height: 120px;
+      overflow: hidden;
+      z-index: 5;
+      box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.06);
+      .pd-cp-box{
+        display: none;
+        &.subtotal{
+          display: block;
+          .pd-cp-container{
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+  .pd-cp-box{
+    width: 100%;
+    background-color: white ;
+    text-align: center;
+    padding: 16px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #e9e9eb;
+    padding-bottom: 12px;
+    &.child{
+      background-color: #f9f9fb;
+      box-shadow: 0 1px 0 0 #e4e4e4, inset 0 0 0 0 #e4e4e4;
+      & > div {
+        &.pd-cp-text-label{
+          font-size: 12px;
+          text-align: left;
+          color: #3d3d3d;
+          font-weight: 300;
+        }
+        &.pd-cp-text-number{
+          font-size: 12px;
+          text-align: right;
+          color: #a4a4a4;
+          font-weight: 300;
+        }
+      }
+    }
+    p{
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 0px;
+    }
+    &.label{
+      background-color: #5b8ef4;
+      p{
+        color: #ffffff;
+      }
+    }
+    & > div{
+      flex-grow: 1 ;
+      &.pd-cp-text-label{
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+        color: #3d3d3d;
+
+      }
+      &.pd-cp-text-number{
+        font-size: 14px;
+        font-weight: 600;
+        text-align: right;
+        color: #a4a4a4;
+      }
+    }
+    &.subtotal{
+      display: block;
+      .pd-cp-text-label{
+        font-size: 15px;
+        text-align: left;
+        font-weight: 600;
+      }
+      .pd-cp-text-number{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1;
+        text-align: right;
+        color: #73bd67;
+      }
+      .pd-cp-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 48px;
+        & > div{
+          flex-grow: 1;
+        }
+      }
+      button{
+        width: 100%;
+      }
+    }
+  }
+  .button-place{
+    margin-top: 24px;
+    .btn-add{
+      margin-top: 0px;
+    }
+    button{
+      width: 100%;
+    }
+    &.row{
+      .col-md-3{
+        padding: 0px;
+      }
+      .col-md-9{
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+.pd-maps-box{
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+.plan-cart-box{
+  margin-top: 16px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #e4e4e4;
+  width: 100%;
+  position: relative;
+  &.transport{
+    .form-group{
+      padding-left: 0px;
+    }
+    .planbox-img{
+      border: solid 1px #e4e4e4;
+    }
+    .planbox-price{
+      width: 70%;
+      font-size: 18px;
+      span{
+        font-size: 15px;
+        line-height: 1.47;
+      }
+    }
+    .planbox-button-action{
+      width: 30%;
+    }
+  }
+  &.pemandu{
+    .form-group{
+      padding: 0px;
+    }
+    .planbox-description{
+      padding: 16px;
+    }
+    .planbox-destination{
+      padding-left: 8px;
+    }
+    .planbox-img{
+      border: solid 1px #e4e4e4;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 16px;
+      border : 4px solid #F0F0F0 ;
+      img{
+        height: 100%;
+        width: auto;
+      }
+    }
+    .planbox-price{
+      width: 40%;
+      font-size: 18px;
+      span{
+        font-size: 15px;
+        line-height: 1.47;
+      }
+    }
+    .planbox-button-action{
+      width: 60%;
+    }
+  }
+  .btn-delete{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 3;
+  }
+  .planbox-head{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row ;
+    padding: 8px;
+  }
+  .planbox-img{
+    width: 20% ;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+    &:after{
+      content: '';
+      display: block;
+      padding-top: 100% ;
+    }
+  }
+  .pcb-body{
+    background-color: #f9f9fb;
+    padding: 14px;
+    box-shadow: 0 1px 0 0 #e4e4e4, 0 -1px 0 0 #e4e4e4;
+    position: relative;
+    display: none;
+    &.show{
+      display: block;
+    }
+    .pcbb-head{
+      height: 58px;
+      line-height: 58px;
+      font-size: 18px;
+      font-weight: 300;
+      border-bottom: solid 1px #e4e4e4;
+      text-transform: uppercase;
+    }
+    .pcbb-img{
+      width: 100px;
+      height: 100px;
+      border-radius: 2px;
+      overflow: hidden;
+      img{
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50% , -50%);
+      }
+    }
+    .pcbb-extra{
+      margin-top: 11px;
+      padding: 14px 0px;
+      margin-left: 52px;
+      width: calc(100% -52px);
+      display: block;
+      border-top:dashed 1px #e4e4e4;
+      h5{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1;
+        text-align: left;
+        color: #3d3d3d;
+        margin-bottom: 16px;
+      }
+      .pcbb-extra-input{
+        background-color: #ffffff;
+        box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05);
+        padding: 16px;
+        label{
+          margin: 0px;
+          font-weight: 300;
+        }
+        .price{
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1;
+          text-align: right;
+          color: #3d3d3d;
+          opacity: 0.5;
+          position: absolute;
+          right: 0;
+          transition: 0.4s ease ;
+        }
+        .checkbox-area{
+          .active{
+            .price{
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .pcbb-box{
+      border-bottom: solid 1px #e4e4e4;
+      padding: 8px;
+      padding-left: 0px;
+      position: relative;
+      .row{
+        width: 100%;
+        padding-top: 16px;
+      }
+      h5{
+        margin-top: 8px;
+        & + h5{
+          font-size: 15px;
+          margin-bottom: 0px;
+        }
+      }
+      p{
+        font-size: 15px;
+        line-height: 1.33;
+        text-align: left;
+        color: #637381;
+        font-weight: 300;
+        & + h5{
+          font-size: 15px;
+          margin-bottom: 0px;
+        }
+      }
+      &:last-child{
+        border-bottom: 0px solid transparent;
+      }
+      .pcbbb-input{
+        position: absolute;
+        left:0px;
+        .checkbox-area label{
+          height: 24px;
+        }
+        & > div{
+          width: 100%;
+        }
+      }
+      .pcbbb-label{
+        position: relative;
+        padding-left: 52px;
+      }
+    }
+  }
+  .planbox-body-action{
+    width: 100%;
+    height: 52px;
+    border-top: solid 1px #e4e4e4;
+    position: relative;
+      cursor: pointer;
+    .pba-label{
+      white-space: nowrap;
+      right: 16px;
+      position: absolute;
+      p{
+        font-size: 15px;
+        line-height: 24px;
+        color: #3d3d3d;
+        display: inline-block;
+        margin: 0px;
+        margin-right: 8px;
+      }
+    }
+    .pba-label-ico{
+      width: 24px;
+      height: 24px;
+      background-color: #F9F9FB;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 30px;
+      display: inline-block;
+    }
+  }
+  .planbox-text{
+    padding-left: 8px;
+    padding-top: 4px;
+    position: relative;
+    width: calc(100% - 20%);
+    .planbox-destination{
+      span{
+        font-size: 10px;
+        line-height: 1.2;
+        color: #3d3d3d;
+        margin-bottom: 8px;
+        display: block;
+      }
+      p{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+        color: #3d3d3d;
+        margin: 0px;
+        & + p{
+          margin-top: 8px;
+          font-size: 15px;
+          font-weight: 300;
+          line-height: 1;
+          text-align: left;
+          color: #a4a4a4;
+        }
+      }
+    }
+    .planbox-rating{
+      margin-top: 4px;
+      span{
+        margin-top: 6px;
+        color: #3c3c3c;
+      }
+    }
+    .planbox-price{
+      width: 100%;
+      position: absolute;
+      left : 8px;
+      bottom: 0px;
+      font-size: 24px;
+      line-height: 1;
+      color: #3d3d3d;
+    }
+  }
+}
+
+// modal
+
+.modal-plan-destinasi{
+  .close-modal-container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 20%;
+    .close-btn{
+      left: 50% ;
+      top: 50%;
+      transform: translate(-50% , -50%) rotate(45deg);
+    }
+  }
+  .modal-plan-destinasi-ov-body{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80%;
+    background-color: #f9f9fb;
+    transform: translateY(100%);
+    will-change: transform;
+    overflow: hidden;
+    // &.filter-show{
+    //   .modal-pd-body{
+    //     opacity: 0.3;
+    //   }
+    //   .modal-filter-body{
+    //     transform: scale(1);
+    //     transition: 0.4s ease ;
+    //     & > .container{
+    //       opacity: 1 ;
+    //       transition: 0.4s ease 0.4s ;
+    //     }
+    //   }
+    // }
+  }
+  &.active{
+    .modal-plan-destinasi-ov-body{
+      transform: translate(0);
+      transition: transform 0.4s ease 0.3s ;
+    }
+  }
+  .with--map{
+    &.container{
+      overflow: hidden;
+    }
+    & > .row{
+      height: 100%;
+      position: relative;
+      margin-right: -40px;
+      padding-right: 30px;
+    }
+    .planbox-container{
+      position: relative;
+      overflow: auto;
+      height: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .map-place{
+      padding-top: 50px;
+      padding-bottom: 50px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .map-place-container{
+      position: absolute;
+      top: 50px;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+    }
+  }
+  .modal-pd-box-container{
+    position: absolute;
+    width: calc(100% - 80px);
+    @media (max-width: 1080px){
+      width: calc(100% - 20px) ;
+    }
+    @media (max-width: 993px){
+      top: 0;
+      left: 0;
+      position: relative;
+      transform: translate(0 ,0);
+      display: block;
+      margin: auto;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      overflow: auto;
+      height: 100%;
+    }
+  }
+  .nav-btn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e4e4e4;
+    border-radius: 50%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 2;
+    i{
+      position: absolute;
+      font-size: 18px;
+      transition: 0.3s ease ;
+    }
+    &:hover{
+      i{
+        color: $orange ;
+      }
+    }
+    &.nav-btn-left{
+      transform: translate(-50% , -50%);
+      left: 0;
+    }
+    &.nav-btn-right{
+      right: 0;
+      transform: translate(50% , -50%);
+    }
+    @media (max-width: 1200px){
+      &.nav-btn-left  {
+        left: 16px;
+        transform: translate(0 , -50% );
+      }
+      &.nav-btn-right  {
+        right: 16px;
+        transform: translate(0 , -50% );
+      }
+    }
+    @media (max-width: 600px){
+      display: none;
+    }
+  }
+  .modal-pd-planbox{
+    width: 100%;
+    background-color: #ffffff;
+    border: solid 1px #e4e4e4;
+    will-change: transform;
+    margin-bottom: 32px;
+    transition: 0.3s ease ;
+    cursor: pointer;
+    &.transport{
+      .planbox-img{
+        border: solid 1px #e4e4e4;
+      }
+      .planbox-price{
+        width: 70%;
+        span{
+          font-size: 15px;
+          line-height: 1.47;
+        }
+      }
+      .planbox-button-action{
+        width: 30%;
+      }
+    }
+    &.pemandu{
+      .planbox-description{
+        padding: 16px;
+      }
+      .planbox-destination{
+        padding-left: 8px;
+      }
+      .planbox-img{
+        border: solid 1px #e4e4e4;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border : 4px solid #F0F0F0 ;
+        img{
+          height: 100%;
+          width: auto;
+        }
+      }
+      .planbox-price{
+        width: 40%;
+        font-size: 18px;
+        span{
+          font-size: 15px;
+          line-height: 1.47;
+        }
+      }
+      .planbox-button-action{
+        width: 60%;
+      }
+    }
+    .planbox-description{
+      padding: 8px;
+      width: 100%;
+      border-bottom: solid 1px #e4e4e4;
+      display: flex;
+      flex-direction: row ;
+    }
+    .planbox-img{
+      width: 30% ;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+      &:after{
+        content: '';
+        display: block;
+        padding-top: 100% ;
+      }
+    }
+    .planbox-text{
+      padding-left: 8px;
+      padding-top: 4px;
+      position: relative;
+      .planbox-destination{
+        span{
+          font-size: 10px;
+          line-height: 1.2;
+          color: #3d3d3d;
+          margin-bottom: 4px;
+          display: block;
+        }
+        p{
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 1;
+          color: #3d3d3d;
+          margin: 0px;
+          & + p{
+            margin-top: 8px;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1;
+            text-align: left;
+            color: #a4a4a4;
+          }
+        }
+      }
+      .planbox-rating{
+        position: absolute;
+        bottom: 0px;
+        left: 8px;
+        span{
+          color: #3c3c3c;
+        }
+      }
+    }
+    &:hover{
+      transform: translateY(-10px);
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 1200px){
+      .planbox-action{
+        .planbox-price{
+          font-size: 16px;
+          align-items: center;
+          padding-top: 0px;
+          position: relative;
+          .price-box{
+            padding-top: 4px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  .planbox-action{
+    padding: 8px;
+    display: flex;
+    flex-direction: row ;
+    .planbox-price{
+      font-size: 22px;
+      line-height: 1;
+      text-align: left;
+      color: #3d3d3d;
+      width: 40%;
+      padding-top: 8px;
+    }
+    .planbox-button-action{
+      width: 60%;
+      display: flex;
+      flex-direction: row;
+      .btn--orange{
+        color: white !important;
+      }
+      & > button{
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+        flex-grow: 1 ;
+        text-transform: capitalize;
+        font-size: 12px;
+        line-height: 1.25;
+        text-align: center;
+        color: #3d3d3d;
+        & + button {
+          margin-left: 4px;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,494 @@
+<div class="container container--full grey">
+	<div class="modal-pd-head rp__filter">
+      <div class="modal-pd-head-top container">
+        <div class="modal-pd-description">
+          <div class="modal-pd-desc-label">
+            Rekomendasi
+          </div>
+        </div>
+        <div class="modal-pd-filter">
+          <ul class="modal-pd-filter-inner">
+              <li class="mpd-child js-open-filter"><p>FILTER</p><img src="images/icon/ic-filter.svg" alt="filter icon" class="svg-image"></li>
+              <li class="mpd-child"><p>SORT</p><img src="images/icon/ic-sort.svg" alt="sort icon" class="svg-image"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-filter-body ">
+        <div class="container">
+          <div class="modal-primary-filter">
+            <div class="filter-menu">
+              <div class="filter-menu-box active">
+                <div class="fmb-inner">
+                  <div class="fmb-img">
+                    <img class="svg-image" src="./images/icon/ic-briefcase.svg" alt="icon briefcase">
+                  </div>
+                  <div class="fmb-label">
+                    <span>KATEGORI</span>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-menu-box">
+                <div class="fmb-inner">
+                  <div class="fmb-img">
+                    <img class="svg-image" src="./images/icon/ic-coin.svg" alt="icon briefcase">
+                  </div>
+                  <div class="fmb-label">
+                    <span>HARGA</span>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-menu-box">
+                <div class="fmb-inner">
+                  <div class="fmb-img">
+                    <img class="svg-image" src="./images/icon/ic-pricetag.svg" alt="icon briefcase">
+                  </div>
+                  <div class="fmb-label">
+                    <span>TAG</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter-reset">
+              <button class="btn small"><i class="fa fa-refresh" aria-hidden="true"></i>Reset</button>
+            </div>
+          </div>
+          <div class="modal-child-filter">
+
+            <div class="mcf-action active  row">
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="semua" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="semua" class="">Semua</label>
+                </div>
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="atraksi" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="atraksi" class="">Atraksi</label>
+                </div>
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="resto" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="resto" class="">Resto</label>
+                </div>
+
+
+            </div>
+
+            <div class="mcf-action row ">
+
+              <div class="form-group col-md-2">
+                <label for="">Minimum</label>
+                <div class="input-group">
+                  <input id="input-with-keypress-0" type="text" placeholder="Placeholder">
+                </div>
+              </div>
+
+              <div class="slider-group col-md-8">
+                <div class="middle-v">
+                  <div id="keypress">
+
+                  </div>
+                </div>
+              </div>
+
+            <div class="form-group col-md-2">
+              <label for="">Maksimum</label>
+              <div class="input-group">
+                <input id="input-with-keypress-1" type="text" placeholder="Placeholder">
+              </div>
+            </div>
+
+            </div>
+
+            <div class="mcf-action row">
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="semua" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="semua" class="">Semua</label>
+                </div>
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="atraksi" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="atraksi" class="">Keluarga</label>
+                </div>
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="resto" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="resto" class="">Outdoor</label>
+                </div>
+
+                <div class="checkbox-area col-md-2">
+                  <input type="checkbox" name="kategori" id="resto" data-parsley-multiple="kategori" data-parsley-id="46">
+                  <label for="resto" class="">Kuliner</label>
+                </div>
+
+
+            </div>
+
+          </div>
+          <div class="modal-filter-footer">
+            <div class="container">
+              <div class="close-filter js-close-filter">
+                <p>Tutup Filter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="container container-body">
+		<div class="rp__wrapper">
+			<div class="rp__wrap row">
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content col-md-6">
+					<div class="card card--full">
+						<div class="swiper-container card__slider">
+							<!-- Additional required wrapper -->
+						    <div class="swiper-wrapper">
+						        <!-- Slides -->
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						        <div class="swiper-slide">
+									<img src="./images/image-card.jpeg" alt="">
+						        </div>
+						    </div>
+
+						    <!-- If we need pagination -->
+	    					<div class="swiper-pagination home-pagination card-pagination"></div>
+						</div>
+						<div class="card__location row">
+							<div class="card__map col-4">
+								<div id="map" class="pd-maps-box maps"></div>
+							</div>
+							<div class="card__infowrap col-8">
+								<h5>Petualangan di raja ampat</h5>
+								<p class="card__desc">Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.</p>
+								<div class="card__info">
+									<span class="fa fa-map-marker"></span>
+									<p>Sulawesi Selatan</p>
+								</div>
+							</div>
+							<div class="card__info card__info--mobile col-12">
+								<span class="fa fa-map-marker"></span>
+								<p>Sulawesi Selatan</p>
+							</div>
+						</div>
+						<div class="card__pricewrap relative">
+							<h2>Rp200.000 <span>/Orang</span></h2>
+							<img class="svg-image" src="./images/icon/home-arrow-b.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="rp__content rp__btn col-md-12">
+					<button class="btn">LIHAT LEBIH BANYAK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/plugins/swiper.min.js" charset="utf-8"></script>
+<script src="js/view/recomended_plan.js" charset="utf-8"></script>

@@ -1,3 +1,202 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+header{
+  &.fixed-header
+  {
+    height: 60px;
+    .header-container{
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 4;
+    }
+  }
+}
+
+.header-container{
+  width: 100%;
+  .container{
+    height: 60px;
+    text-align: right;
+  }
+  .header-logo , .header-logo-dark{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .header-logo-dark{
+    display: none;
+  }
+  .header-menu{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      &:last-child{
+        li {
+          padding-right: 0px;
+        }
+      }
+      li{
+        color: white;
+        padding: 10px 16px;
+        padding-top: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-align: center;
+        text-transform: uppercase;
+        button{
+          margin-top: -2px;
+          border: 1px solid #ffb757 ;
+          color: #ffb757;
+          text-transform: uppercase;
+        }
+      }
+    }
+    @media(max-width: 650px){
+      display: none;
+    }
+  }
+  .header__profile--menu{
+    a{
+      display: block;
+    }
+  }
+  &.solid{
+    background-color: white;
+    box-shadow: inset 0 -1px 0 0 #dfe4e8;
+    .header-logo-dark{
+      display: block;
+    }
+    .header-logo{
+      display: none;
+    }
+    .header-menu{
+      a{
+        text-decoration: none;
+        li{
+          color: #3d3d3d;
+          transition: 0.3s ease ;
+          &:hover{
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+.header__login{
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 8px;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    background-color: #e4e4e4;
+  }
+  span{
+    margin: 0 8px;
+    padding-bottom: 3px;
+    color: #a4a4a4;
+    font-size: 12px;
+    vertical-align: middle;
+  }
+}
+.header__profile{
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+.header__profile--menu{
+  position: absolute;
+  top: 175%;
+  right: -45px;
+  width: 130px;
+  transform: translateY(-20%);
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.15), 0 0 0 1px rgba(63, 63, 68, 0.05);
+  padding: 4px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 1;
+  .btn{
+    width: 100%;
+  }
+  a{
+    padding: 8px;
+    text-align: left;
+    color: #3d3d3d;
+    transition: 0.3s ease;
+    border-bottom: 1px solid #e4e4e4;
+    &:hover{
+      color: #ffb757;
+    }
+  }
+  &.active{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  &:after, &:before{
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &:before {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 11px;
+    margin-left: -11px;
+  }
+}
+.header__logout{
+  padding: 4px 4px 0;
+}
+.header-hamburger{
+  display: none;
+  @media(max-width: 650px){
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    span{
+      font-size: 24px;
+    }
+  }
+}

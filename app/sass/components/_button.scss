@@ -8,16 +8,29 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 1.25;
-  padding: 8px 54px;
+  padding: 12px 8px 4px 8px;
   border-radius: 4px;
   background-color: #ffffff;
   border: solid 1px #a4a4a4;
   cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Hind Guntur', sans-serif;
+  position: relative;
+  &.small{
+    padding: 12px 20px 4px 20px;
+  }
+  &.transparent{
+    background-color: transparent;
+  }
   &:active{
     transform: translateY(1px);
+    outline: none ;
+  }
+  &:focus{
+    outline: none ;
   }
   &.btn--medium{
-    padding: 16px 54px;
+    padding: 16px 16px 10px 16px;
     font-size: 15px;
   }
   &.btn--blue{
@@ -30,16 +43,56 @@
     border: solid 1px #f0a643;
     color: white;
   }
-  &.btn-add{
+  &.btn-add , &.btn-add-2{
     border:  1px #5b8ef4;
     border-style: dashed;
     background-color: white;
     font-size: 15px;
     font-weight: 600;
     line-height: 1;
-    padding: 16px;
-    i{
-
+    padding: 10px 16px 10px 16px;
+    .ico--plus{
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: #5b8ef4 ;
+      vertical-align: middle;
+      border-radius: 50%;
+      margin-right: 8px;
+      position: relative;
+      &:after , &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        height: 1px;
+        width: 8px;
+        background-color: white;
+      }
+      &:before{
+        transform: translate(-50% , -50%) rotate(-90deg);
+      }
     }
+    .btn--text{
+      display: inline-block;
+      margin: 0px;
+      vertical-align: middle;
+      margin-top: 2px;
+    }
+  }
+  &.btn-add-2{
+     background-color: #5b8ef4;
+     border: solid 1px #4d7cda;
+     .btn--text{
+       color: white;
+     }
+     .ico--plus{
+       background-color: white;
+       &:before , &:after {
+         content: '';
+         background-color: #5b8ef4;
+       }
+     }
   }
 }

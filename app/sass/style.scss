@@ -10,7 +10,9 @@
 
 // 2. Vendors
 @import
-  'vendor/normalize';
+  'vendor/normalize',
+  'vendor/fullcalendar',
+  'vendor/typeahead';
 
 // 3. Base stuff
 @import
@@ -22,8 +24,15 @@
 
 
 // This part is for using tachyon, uncomment this if you are want to use it
-// @import
-//   'tachyon';
+@import
+  'tachyon/clears',
+  'tachyon/box-sizing',
+  'tachyon/box-shadow',
+  'tachyon/forms',
+  'tachyon/links',
+  'tachyon/lists',
+  'tachyon/normalize',
+  'tachyon/position';
 
 // 4. Layout-related sections
 @import
@@ -32,11 +41,27 @@
 
 // 5. Components
 @import
-  'components/button';
+  'components/button',
+  'components/cards',
+  'components/modal',
+  'components/forms',
+  'components/sidemenu';
 
 // 6. Page-specific styles
 @import
-  'pages/home';
+  'pages/home',
+  'pages/choose_plan',
+  'pages/recomended_plan',
+  'pages/itinerary',
+  'pages/pembayaran',
+  'pages/detail_atraksi',
+  'pages/detail_pemandu',
+  'pages/detail_opentrip',
+  'pages/dashboard',
+  'pages/plan_destinasi',
+  'pages/konfirmasi',
+  'pages/mitra',
+  'pages/static';
 
 // 7. Themes
 @import

@@ -9,6 +9,7 @@ html {
   box-sizing: border-box;
 }
 
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -25,9 +26,231 @@ html {
 a {
   color: $brand-color;
   text-decoration: none;
-
   @include on-event {
     color: $text-color;
     text-decoration: underline;
+  }
+}
+
+ul{
+  padding: 0px;
+  li{
+    list-style: none;
+  }
+}
+
+.tl  { text-align: left; }
+.tr  { text-align: right; }
+.tc  { text-align: center; }
+
+.container {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+  overflow: hidden;
+
+  &.container-body{
+    min-height: 100vh ;
+    padding-bottom: 48px;
+  }
+  &.container--full{
+    max-width: 100%;
+    padding: 0px;
+  }
+  &.grey{
+    background-color: #f9f9fb;
+  }
+  &.white{
+    background-color: white;
+  }
+  &.blue{
+    background-color: $blue;
+  }
+  @media(max-width: 400px){
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+ }
+
+ .pad-h-24{
+   padding: 24px 0px ;
+ }
+
+ .pad-v-24{
+   padding: 0px 24px ;
+ }
+
+.pad-24{
+  padding: 24px;
+}
+
+.middle-both{
+  position: absolute;
+  top : 50% ;
+  left: 50% ;
+  transform: translate(-50% , -50%);
+}
+
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(30, 48, 97, 0.6);
+  opacity: 0;
+  z-index: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease ;
+  &.active{
+    visibility: visible;
+    opacity: 1;
+    z-index: 5;
+  }
+  .close-btn{
+    width: 62px;
+    height: 62px;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    &:after , &:before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      height: 1px;
+      width: 20px;
+      background-color: #3d3d3d;
+      transition: 0.3s ease ;
+    }
+    &:before{
+      transform: translate(-50% , -50%) rotate(-90deg);
+    }
+    &:hover{
+      &:after , &:before{
+        background-color: $orange !important;
+      }
+    }
+  }
+}
+
+// overwrite row bootstrap
+.row{
+  margin: 0;
+  &.row--withmargin{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.star-rating{
+  .rating-container {
+    white-space: nowrap;
+  }
+  em{
+    display: inline-block;
+    color: $orange;
+    margin-right: 3px;
+  }
+}
+
+.middle-v{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.noUi-target{
+  height: 4px;
+  border-radius: 100px;
+  border: 0px solid transparent;
+  box-shadow: none ;
+  background-color: #d8d8d8;
+  .noUi-connect{
+     background-color: #5c8ff3;
+  }
+  .noUi-background{
+    background-color: #d8d8d8;
+    box-shadow: none;
+  }
+  .noUi-handle{
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e4e4e4;
+    border-radius: 100%;
+    left: -1px;
+    top: -4px;
+    right: 0px;
+    cursor: pointer;
+    &:after , &:before{
+      display: none;
+    }
+  }
+}
+
+.btn-delete{
+  width: 24px;
+  height: 24px;
+  background-color: #F9F9FB;
+  border-radius: 100%;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  &:after , &:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    height: 1.5px;
+    width: 12px;
+    background-color: #A4A4A4;
+    transition: 0.3s ease ;
+  }
+  &:before{
+    transform: translate(-50% , -50%) rotate(-90deg);
+  }
+  &:hover{
+    &:after , &:before{
+      background-color: $orange !important;
+    }
+  }
+}
+
+.social-share-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 24px;
+  .social-circle{
+    width: 28px;
+    height: 28px;
+    background-color: #ffffff;
+    border: solid 1px #e4e4e4;
+    line-height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 16px;
+    cursor: pointer;
+    &.facebook{
+      color: #49639e;
+    }
+    &.twitter{
+      color: #1da1f2;
+    }
+    &.pinterest{
+      color: #bd081c;
+    }
+    &.instagram{
+      color: #8a3ab9 ;
+    }
   }
 }
