@@ -926,6 +926,10 @@ span {
   width: 1px;
 }
 
+.no-padding {
+  padding: 0;
+}
+
 .pull-right {
   float: right !important;
 }
@@ -5561,9 +5565,22 @@ header.fixed-header .header-container {
   padding: 10px;
 }
 
+@media (max-width: 770px) {
+  .rp__content.col-md-4 {
+    max-width: 50%;
+    -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+  }
+}
+
 @media (max-width: 580px) {
   .rp__content {
     padding: 10px 20px;
+  }
+  .rp__content.col-md-4 {
+    max-width: 100%;
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
   }
 }
 
